@@ -185,7 +185,14 @@ jobs:
           echo '{"patterns": [], "last_updated": "'$(date -Iseconds)'"}' > learning_patterns.json
           echo '{"current_season": 2025, "historical_data": []}' > seasonal_intelligence.json
           echo '[]' > decision_history.json
-
+      - name: DEBUG model
+        working-directory: fantasy-engine/automation
+        env:
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: |
+          echo "COMMIT: $(git rev-parse HEAD)"
+          echo "GEMINI_MODEL=[$GEMINI_MODEL]"
+          grep -rn "3.7-flash" dist ../shared/dist 2>/dev/null | head -20
       - name: Execute Phase 4 Intelligence
         id: intelligence
         working-directory: fantasy-engine/automation
