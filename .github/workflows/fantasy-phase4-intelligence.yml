@@ -84,7 +84,7 @@ jobs:
           LEAGUE_1_ID: ${{ secrets.LEAGUE_1_ID }}
           LEAGUE_1_TEAM_ID: ${{ secrets.LEAGUE_1_TEAM_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.7-flash' }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           PRIMARY_LLM_PROVIDER: ${{ vars.PRIMARY_LLM_PROVIDER || 'gemini' }}
         run: |
