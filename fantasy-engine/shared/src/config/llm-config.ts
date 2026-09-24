@@ -53,7 +53,7 @@ export class LLMConfigManager {
     if (geminiKey) {
       return {
         provider: 'gemini',
-        model: process.env.GEMINI_MODEL || 'gemini-3.7-flash',
+        model: process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite',
         api_key: geminiKey,
         max_tokens: 1000,
         temperature: 0.7
